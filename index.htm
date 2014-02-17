@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html manifest="/manifest.cache">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>HTML5 Overview</title>
+      <meta charset="utf-8">
+      <script src="./js/slides.js"></script>
+      <style>
+      </style>
+      <meta name="viewport" content="width=1100,height=750">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+   </head>
+   <body style="display: none" class="loaded">
+      <section class="slides layout-regular template-default">
+         <article current>
+            <h1>
+               HTML5 Overview
+            </h1>
+            <p>
+               Ansuman Mishra
+               <br>
+               Feb 19, 2014
+            </p>
+         </article>
+         <article class="fill">
+            <h2>Doctype</h2>
+         </article>
+         <article>
+            <h3>The HTML5 Doctype</h3>
+            <div class=build>
+               <pre contenteditable>&lt;!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></pre>
+               <pre>to</pre>
+               <pre>&lt;!doctype html></pre>
+            </div>
+         </article>
+         <article>
+            <h3>meta charset</h3>
+            <div class=build>
+               <pre >&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></pre>
+               <pre>&lt;meta http-equiv="Content-Type" content=text/html; charset=UTF-8></pre>
+               <pre>&lt;meta charset=utf-8></pre>
+            </div>
+         </article>
+         <article class="fill">
+            <h2>Semantic Tags</h2>
+         </article>
+         <article class="">
+            <h3>
+               DIV
+            </h3>
+            <h5>Traditional Approach</h5>
+            <p>
+               Live Demo - <a target="_blank" href="html4/index.html">See Example</a>
+            </p>
+            <p>
+            <pre class="code">
+              &lt;div id="page"&gt;
+                  &lt;div id="header"&gt;
+                      &lt;div id="nav"&gt;
+                        ...
+                      &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div id="content"&gt;
+                      ...
+                  &lt;/div&gt;
+                  &lt;div id="footer"&gt;
+                      ...
+                  &lt;/div&gt;
+              &lt;/div&gt;
+        </pre>
+            </p>
+         </article>
+         <article class="">
+            <h3>
+               Semantic Markup
+            </h3>
+            <h5>HTML5 Approach</h5>
+            <p>
+               Live Demo - <a target="_blank" href="images/html5/index.html">See Example</a>
+            </p>
+            <p>
+            <pre class="code">
+            &lt;header&gt;
+              &lt;nav&gt;
+              ...
+              &lt;/nav&gt;
+            &lt;header&gt;
+            &lt;section&gt;
+              &lt;article&gt;
+                  &lt;aside&gt;
+                    ...
+                  &lt;/aside&gt;
+              &lt;/article&gt;
+            &lt;/section&gt;
+            &lt;footer&gt;
+              ...
+            &lt;/footer&gt;
+        </pre>
+            </p>
+         </article>
+         <article class="">
+            <h3>
+               Sample HTML5 Layout
+            </h3>
+            <p><img class="centered" style="height: 500px" src="images/HTML5PageLayout.jpg"></p>
+         </article>
+         <article>
+            <h3>
+               Optional end tags
+            </h3>
+            <p>Structural stuff like:</p>
+            <p>
+               <code>&lt;/html></code>, <code>&lt;/head></code>, <code>&lt;/body></code>
+            </p>
+            <p>Lists stuff like:</p>
+            <p>
+               <code>&lt;/dt></code>, <code>&lt;/dd></code>, <code>&lt;/li></code>
+            </p>
+            <p>Table stuff like:</p>
+            <p>
+               <code>&lt;/thead></code>, <code>&lt;/th></code>, <code>&lt;/tbody></code>, <code>&lt;/tr></code>, <code>&lt;/td></code>, <code>&lt;/tfoot></code>, <code>&lt;/colgroup></code>
+            </p>
+            <p>Lest we forget:</p>
+            <p>
+               <code>&lt;/p></code>,  <code>&lt;/option></code>
+            </p>
+            <div class=source>
+               <a target="_blank" href="http://www.w3.org/TR/html5/syntax.html#optional-tags">HTML5 Spec. Syntax: Optional tags</a>
+            </div>
+         </article>
+         <article style="background:white">
+            <h3>
+               Optional end tags
+            </h3>
+            <pre>
+&lt;ul>
+    &lt;li>item one
+    &lt;li>item two
+    &lt;li>item three
+&lt;/ul>
+
+
+&lt;table>
+  &lt;caption>Selector engines, parse direction&lt;/caption>
+  &lt;thead>
+      &lt;tr>&lt;th>Left to right            &lt;th>Right to left
+  &lt;tbody>
+      &lt;tr>&lt;td>Mootools                 &lt;td>Sizzle
+      &lt;tr>&lt;td>Sly                      &lt;td>YUI 3
+      &lt;tr>&lt;td>Peppy                    &lt;td>NWMatcher
+      &lt;tr>&lt;td>Dojo Acme                &lt;td>querySelectorAll
+      &lt;tr>&lt;td>Ext JS
+      &lt;tr>&lt;td>Prototype.js
+&lt;/table></pre>
+         </article>
+         <article>
+            <h3>
+               Minimal markup
+            </h3>
+            <pre contenteditable spellcheck=false>
+&lt;!doctype html>
+&lt;meta charset=utf-8>
+&lt;title>svelte ain't it?&lt;/title>
+
+&lt;p>SUP
+        </pre>
+            <div class=build>
+               <p>Take a peek at <a target="_blank" href="http://www.google.com/404">www.google.com/404</a>
+            </div>
+         </article>
+         <article class="fill">
+            <h2>Form Types</h2>
+         </article>
+         <article>
+            <h3>New Form Types</h3>
+            <pre>
+        <form>
+        &lt;input type="text" required&gt;
+        <input type="text" required>
+        &lt;input type="email" value="some@email.com&gt;
+        <input type="email" value="some@email.com">
+        &lt;input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"&gt;
+        <input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14">
+        &lt;input type="range" min="0" max="50" value="10"&gt;
+        <input type="range" min="0" max="50" value="10">
+        &lt;input results="10" type="search" placeholder="Search..."&gt;
+        <input results="10" type="search" placeholder="Search...">
+        &lt;input type="tel" placeholder="987654321" pattern="[0-9][A-Z]{3}"&gt;
+        <input type="tel" placeholder="987654321" pattern="[0-9][A-Z]{3}">
+        &lt;input type="color" placeholder="e.g. #bbbbbb"&gt;
+        <input type="color" placeholder="e.g. #bbbbbb">
+        &lt;input type="number" step="1" min="-5" max="10" value="0"&gt;
+        <input type="number" step="1" min="-5" max="10" value="0">
+        <button type="submit">Validate Form</button>
+        </form>
+        </pre>
+         </article>
+         <article>
+            <h3>Datalist</h3>
+            <pre>
+        &lt;label>Your favorite fruit:
+        &lt;datalist id="fruits">
+          &lt;option value="Mango">Mango&lt;/option>
+          &lt;option value="Apple">Apple&lt;/option>
+          &lt;option value="Orange">Orange&lt;/option>
+          &lt;option value="Pineapple">Pineapple&lt;/option>
+          &lt;option value="Papaya">Papaya&lt;/option>
+          <!-- … -->
+        &lt;/datalist>
+        If other, please specify:
+          &lt;input type="text" name="fruit" list="fruits">
+        &lt;/label>
+        </pre>
+            <div class=build>
+               <pre>
+        <label>Your favorite fruit:
+        <datalist id="fruits">
+          <option value="Mango">Mango</option>
+          <option value="Apple">Apple</option>
+          <option value="Orange">Orange</option>
+          <option value="Pineapple">Pineapple</option>
+          <option value="Papaya">Papaya</option>
+          <!-- … -->
+        </datalist>
+        If other, please specify:
+          <input type="text" name="fruit" list="fruits">
+        </label>
+        </pre>
+            </div>
+         </article>
+         <article>
+            <h3>Content Editable</h3>
+            <ul contenteditable="true">
+               <li> Your tasks are a big part of your life. </li>
+               <li> Praised by the world’s top media
+               <li> Managing millions of tasks </li>
+            </ul>
+            <div class="build">
+               <pre>
+                &lt;ul contenteditable="true">
+                   &lt;li> Your tasks are a big part of your life. &lt;/li>
+                   &lt;li> Praised by the world’s top media. &lt;/li>
+                   &lt;li> Managing millions of tasks. &lt;/li>
+                &lt;/ul>
+              </pre>
+            </div>
+         </article>
+         <article class="fill">
+            <h2>Audio & video</h2>
+         </article>
+         <article class="">
+            <h3>
+               Video & Audio
+            </h3>
+            <div class=build>
+               <pre>Old Days </pre>
+               <pre>
+&lt;object width="640" height="360" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0">
+  &lt;param name="src" value="player.swf?file=video.mp4">
+  &lt;embed src="player.swf?file=video.mp4" width="640"
+    height="360">&lt;/embed>
+&lt;/object>
+</pre>
+               <pre>To</pre>
+               <pre>
+  &lt;video src="video.mp4" controls>&lt;/video>
+</pre>
+            </div>
+         </article>
+         <article>
+            <h3>
+               Video & Audio
+            </h3>
+            <div class=build>
+               <pre>
+&lt;video controls autoplay loop>
+  &lt;source src="foo.ogg" type="video/ogg">
+  &lt;source src="foo.mp4" type="video/mp4">
+  Your browser does not support the &lt;code>video&lt;/code> element.
+&lt;/video>
+</pre>
+               <pre>
+&lt;audio controls autoplay loop>
+  &lt;source src="foo.mp3" type="video/ogg">
+  &lt;source src="foo.mp4" type="video/mp4">
+  Your browser does not support the &lt;code>audio&lt;/code> element.
+&lt;/audio>
+</pre>
+            </div>
+         </article>
+         <article class="">
+            <h3>Video/Audio Demo</h3>
+            <section>
+               <pre>Video Playback</pre>
+               <video width="500" height="300" id="myVideo" controls>
+                  <source src="http://www.html5videoplayer.net/videos/madagascar3.ogv"
+                     type='video/ogg; codecs="theora, vorbis"'>
+                  <source src="http://www.html5videoplayer.net/videos/madagascar3.mp4"
+                     type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                  <source src="http://www.html5videoplayer.net/videos/madagascar3.webm"
+                     type='video/webm; codecs="vp8.0, vorbis"'>
+               </video>
+               <div class="controls">
+                  <input type="button" name="skipBack" value="&lt;&lt;" id="rewind">
+                  <input type="button" name="play" value="&gt;" id="play">
+                  <input type="button" name="pause" value="||" id="pause">
+                  <input type="button" name="stop" value="[]" id="stop">
+                  <input type="button" name="skipBack" value="&gt;&gt;" id="forward">
+                  <input type="range" name="range" id="range">
+               </div>
+               <script>
+                  var videoElem = document.getElementById("myVideo");
+                  var playButton = document.getElementById("play");
+                  var pauseButton = document.getElementById("pause");
+                  var stopButton = document.getElementById("stop");
+                  var rewindButton = document.getElementById("rewind");
+                  var forwardButton = document.getElementById("forward");
+                  var range = document.getElementById("range");
+
+                  videoElem.addEventListener("loadedmetadata", function () {
+                      range.min = 0;
+                      range.step = 1;
+                      range.max = videoElem.duration;
+                  }, false);
+
+                  videoElem.addEventListener("timeupdate", function () {
+                      range.value = videoElem.currentTime;
+                  });
+
+                  range.addEventListener("mousedown", function () {
+                      videoElem.pause();
+
+                  });
+                  range.addEventListener("mouseup", function () {
+                      videoElem.currentTime = range.value;
+                      videoElem.play();
+
+                  });
+
+                  rewindButton.addEventListener("click", function () {
+                      videoElem.currentTime -= 2;
+                  });
+
+                  playButton.addEventListener("click", function () {
+                      videoElem.play();
+                  });
+                  pauseButton.addEventListener("click", function () {
+                      videoElem.pause();
+                  });
+                  stopButton.addEventListener("click", function () {
+                      videoElem.currentTime = 0;
+                      videoElem.pause();
+                  });
+
+                  forwardButton.addEventListener("click", function () {
+                      videoElem.currentTime += 2;
+                  });
+               </script>
+               <pre>Audio Playback</pre>
+               <audio src="audio.ogg" controls autoplay loop>
+                  Your browser does not support the audio element
+               </audio>
+            </section>
+         </article>
+         <article>
+            <h3>Controlling media playback</h3>
+            <div class=build>
+               <pre>
+&lt;video id="demo" src="foo.mp4">&lt;/video>
+&lt;button onclick="document.getElementById('demo').play()">Play</button>
+&lt;button onclick="document.getElementById('demo').pause()">Pause</button>
+&lt;button onclick="document.getElementById('demo').volume+=0.1">++</button>
+&lt;button onclick="document.getElementById('demo').volume-=0.1">--</button>
+</pre>
+               <pre>
+&lt;script>
+var v = document.getElementsByTagName("video")[0];
+v.play();
+&lt;/script>
+</pre>
+            </div>
+         </article>
+         <article>
+            <h3>Compatibility & Feature Detection</h3>
+            <pre>
+            Validating Cross Browser Compatibility: <br />
+              <a href="http://html5test.com/compare/browser/index.html" target="_blank">http://html5test.com/compare/browser/index.html</a>
+              <a href="http://caniuse.com" target="_blank">http://caniuse.com</a>
+              <a href="http://html5please.com" target="_blank">http://html5please.com</a>
+              <a href="http://html5readiness.com" target="_blank">http://html5readiness.com</a>
+            </pre>
+            <pre>
+              Feature Detection Library: <br />
+              <a href="http://modernizr.com/" target="_blank">Modernizr</a>
+              <a href="https://code.google.com/p/html5shiv/" target="_blank">html5shiv</a>
+            </pre>
+         </article>
+         <article class="fill">
+            <h2>Store Dynamic Content</h2>
+         </article>
+         <article>
+            <h3>Cookies - Drawbacks</h3>
+            <div class="build">
+               <p>
+               <ul>
+                  <li>Allow up to only 4 KB of data storage </li>
+                  <li>Cookies are sent with every HTTP request</li>
+                  <li>Each domain stores all its cookies in a single string, which can make parsing data difficult</li>
+                  <li>SQL injection can be performed from a cookie</li>
+               </ul>
+               </p>
+               <pre>This is where HTML5 storage comes in</pre>
+               <p>
+               <ul>
+                  <li>Local Storage</li>
+                  <li>Session Storage</li>
+               </ul>
+               </p>
+            </div>
+         </article>
+         <article>
+            <h3>Local Storage & Session Storage</h3>
+            <div class="build">
+               <pre>Pros</pre>
+               <ul>
+                  <li>~5MB storage per domain</li>
+                  <li>Support by most modern browsers</li>
+                  <li>Persistent data that is stored directly in the browser</li>
+                  <li>Is not sent with every HTTP request</li>
+               </ul>
+               <pre>Cons</pre>
+               <ul>
+                  <li>Not supported in IE8 and few older browsers</li>
+                  <li>Data Can't be accessed by server</li>
+               </ul>
+            </div>
+         </article>
+         <article>
+            <h3>localStorage</h3>
+            <p>localStorage for simple key-value storage</p>
+            <pre>
+if (!localStorage.getItem("color")) {
+  localStorage.setItem("color", "black");
+}</pre>
+            <p>Easy API</p>
+            <pre>
+setItem()
+getItem()
+removeItem()
+clear()</pre>
+         </article>
+         <article>
+            <h3>sessionStorage</h3>
+            <pre>window.sessionStorage</pre>
+            <ul>
+               <li>Same as localStorage but...
+               <li>Lasts as long as browser is open
+               <li>Opening page in new window or tab starts new session
+               <li>Great for temporal data (e.g. form progress)
+            </ul>
+         </article>
+         <article>
+            <h3>Web Storage APIs only store strings!</h3>
+            <p>Solution:</p>
+            <pre>var userstr = JSON.stringify({
+  user: 'john',
+  id: 10
+});
+
+localStorage.setItem('user', userstr);
+
+var user = JSON.parse(localStorage.getItem('user'));
+</pre>
+         </article>
+         <article>
+            <style>
+               #ta {
+               font-size: 19px;
+               width: 400px;
+               height: 150px;
+               display: block;
+               }
+               #localstorage-message {
+               font-size: 19px;
+               padding-top: 50px;
+               }
+            </style>
+            <h3>Example: Auto-save Text</h3>
+            <textarea id="ta" placeholder="Type your text here..."></textarea>
+            <p id="ta-log"></p>
+            <script defer>
+               (function(){
+
+                 try {
+                   (window.localStorage.getItem) // will throw in Firefox under some settings
+                 } catch(e){
+                   return; // quit because dom.storage.enabled is false
+                 }
+
+                 var area = document.querySelector('#ta');
+                 // place content from previous edit
+                 if (!area.value) {
+                   area.value = window.localStorage.getItem('value');
+                 }
+                 updateLog(false);
+
+                 // your content will be saved locally
+                 document.querySelector('#ta').addEventListener('input', function () {
+                   window.localStorage.setItem('value', area.value);
+                   window.localStorage.setItem('timestamp', (new Date()).getTime());
+                   updateLog(true);
+                 }, false);
+
+                 function updateLog(new_save) {
+                   var log = document.querySelector("#ta-log");
+                   var delta = 0;
+                   if (window.localStorage.getItem('value')) {
+                     delta = ((new Date()).getTime() - (new Date()).setTime(window.localStorage.getItem('timestamp'))) / 1000;
+                     if (new_save) {
+                       log.textContent = 'Saved. Content will be available after browser refresh/reopen.';
+                       setTimeout(function() {
+                         log.textContent = '';
+                       }, 3000);
+                     } else {
+                       log.textContent = 'last saved: ' + delta + 's ago';
+                     }
+                   }
+                 }
+
+               })();
+            </script>
+            <pre>document.querySelector('#ta').addEventListener('input', function(e) {
+  localStorage.setItem('value', this.value);
+  localStorage.setItem('timestamp', (new Date()).getTime());
+}, false);
+</pre>
+            <div class=build>
+               <p>Take a peek at <a target="_blank" href="http://html5demos.com/storage">www.html5demos.com/storage</a>
+            </div>
+         </article>
+         <article class="fill">
+            <h2>Store Static Content</h2>
+         </article>
+         <article>
+            <h3>App Cache</h3>
+            <pre>&lt;html manifest="myapp.appcache"></pre>
+            <pre>CACHE MANIFEST
+# version 1.0.0
+
+CACHE:
+/background.png
+
+NETWORK:
+/login.html
+
+FALLBACK:
+/index.html /offline.html</pre>
+         </article>
+         <article>
+            <h3>App Cache Manifest Sections</h3>
+            <dl>
+               <dt>CACHE:
+               <dd># Cached files go here<br><br>
+               <dt>NETWORK:
+               <dd># Resources that require online access <br>
+                  # Can match by prefix or wildcard: <code>/api/</code> <br><br>
+               <dt>FALLBACK:
+               <dd># Substitutions to serve when offline<br>
+                  # Can match by prefix  <br><br>
+            </dl>
+         </article>
+         <article>
+            <h3>App Cache Resource Loading</h3>
+            <ul>
+               <li>1. NETWORK <br>Fetch from network
+               <li>2. CACHE <br>Load from cache
+               <li>3. FALLBACK <br>a) Try to fetch from network<br>b) If failure, load cache resource
+               <li>4. If '*' in a NETWORK section<br>Try to fetch from network
+            </ul>
+            <div class="build">
+               <pre>
+              <a href="http://www.allaboutrajni.com" target="_blank">http://www.allaboutrajni.com </a> (Flash) <br />
+              <a href="http://html5demos.com/offlineapp" target="_blank">http://html5demos.com/offlineapp</a> (HTML5)<br />
+              <a href="https://chrome.google.com/webstore/detail/gmail-offline/ejidjjhkpiempkbhmpbfngldlkglhimk?hl=en" target="_blank">Offline Gmail</a> (HTML5)
+              </pre>
+            </div>
+         </article>
+         <article class="fill">
+            <h2>Online/Offline</h2>
+         </article>
+         <article>
+            <h3><code>navigator.onLine</code> - know when you're all alone</h3>
+            <pre>if (<b>navigator.onLine</b>) {
+  console.log('ONLINE!');
+} else {
+  console.log('Connection flaky');
+}
+</pre>
+            <pre>window.addEventListener('online', function(e) {
+  // Re-sync data with server.
+}, false);
+
+window.addEventListener('offline', function(e) {
+  // Queue up events for server.
+}, false);
+</pre>
+         </article>
+         <article class="fill">
+            <iframe src="http://html5-demos.appspot.com/static/navigator.onLine.html"></iframe>
+         </article>
+         <article class="fill">
+            <h2>Geolocation</h2>
+         </article>
+         <article class="smaller">
+            <h3>Geolocation</h3>
+            <div class="build">
+               <pre>Geolocation API of HTML5 helps in identifying the user’s location</pre>
+               <pre>Getting user’s current location</pre>
+               <pre>
+         &lt;script>
+         if (navigator.geolocation) {
+
+            // Get the user's current position
+            navigator.geolocation.getCurrentPosition(showPosition, showError, optn);
+            } else {
+                alert('Geolocation is not supported in your browser');
+          }
+
+          function showPosition(position) {
+            var Latitude = position.coords.latitude,
+                Longitude = position.coords.longitude;
+
+            document.write('Latitude: '+Latitude+'Longitude: '+Longitude);
+          }
+        }
+          &lt;/script>
+         </pre>
+            </div>
+         </article>
+         <article>
+            <h3> Geolocation Example </h3>
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+            <script>
+               geoloc();
+               var watchId = null;
+               function geoloc() {
+               if (navigator.geolocation) {
+                   var optn = {
+                           enableHighAccuracy : true,
+                           timeout : Infinity,
+                           maximumAge : 0
+                   };
+               watchId = navigator.geolocation.watchPosition(showPosition, showError, optn);
+               } else {
+                       alert('Geolocation is not supported in your browser');
+               }
+               }
+
+               function showPosition(position) {
+                   var googlePos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                   var mapOptions = {
+                       zoom : 12,
+                       center : googlePos,
+                       mapTypeId : google.maps.MapTypeId.ROADMAP
+                   };
+                   var mapObj = document.getElementById('mapdiv');
+                   var googleMap = new google.maps.Map(mapObj, mapOptions);
+                   var markerOpt = {
+                       map : googleMap,
+                       position : googlePos,
+                       title : 'Hi , I am here',
+                       animation : google.maps.Animation.DROP
+                   };
+                   var googleMarker = new google.maps.Marker(markerOpt);
+                   var geocoder = new google.maps.Geocoder();
+                   geocoder.geocode({
+                       'latLng' : googlePos
+                       }, function(results, status) {
+                           if (status == google.maps.GeocoderStatus.OK) {
+                           if (results[1]) {
+                               var popOpts = {
+                                   content : results[1].formatted_address,
+                                   position : googlePos
+                               };
+                           var popup = new google.maps.InfoWindow(popOpts);
+                           google.maps.event.addListener(googleMarker, 'click', function() {
+                           popup.open(googleMap);
+                       });
+                           } else {
+                               alert('No results found');
+                           }
+                           } else {
+                               alert('Geocoder failed due to: ' + status);
+                           }
+                       });
+                       }
+
+                       function stopWatch() {
+                           if (watchId) {
+                               navigator.geolocation.clearWatch(watchId);
+                               watchId = null;
+
+                           }
+                       }
+
+                   function showError(error) {
+                   var err = document.getElementById('mapdiv');
+                   switch(error.code) {
+                   case error.PERMISSION_DENIED:
+                   err.innerHTML = "User denied the request for Geolocation."
+                   break;
+                   case error.POSITION_UNAVAILABLE:
+                   err.innerHTML = "Location information is unavailable."
+                   break;
+                   case error.TIMEOUT:
+                   err.innerHTML = "The request to get user location timed out."
+                   break;
+                   case error.UNKNOWN_ERROR:
+                   err.innerHTML = "An unknown error occurred."
+                   break;
+                   }
+                   }
+
+            </script>
+            <p id = 'mapdiv'></p>
+            <button onclick="stopWatch()">
+            Stop
+            </button>
+         </article>
+         <article class="">
+            <h3>
+               Thank you!
+            </h3>
+         </article>
+         <div class="slide-area" id="prev-slide-area"></div>
+         <div class="slide-area" id="next-slide-area"></div>
+      </section>
+      <link rel="stylesheet" type="text/css" href="./css/styles.css">
+      <script type="text/javascript" src="./js/prettify.js"></script>
+   </body>
+</html>
