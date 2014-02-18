@@ -318,31 +318,31 @@
                   var rewindButton = document.getElementById("rewind");
                   var forwardButton = document.getElementById("forward");
                   var range = document.getElementById("range");
-
+                  
                   videoElem.addEventListener("loadedmetadata", function () {
                       range.min = 0;
                       range.step = 1;
                       range.max = videoElem.duration;
                   }, false);
-
+                  
                   videoElem.addEventListener("timeupdate", function () {
                       range.value = videoElem.currentTime;
                   });
-
+                  
                   range.addEventListener("mousedown", function () {
                       videoElem.pause();
-
+                  
                   });
                   range.addEventListener("mouseup", function () {
                       videoElem.currentTime = range.value;
                       videoElem.play();
-
+                  
                   });
-
+                  
                   rewindButton.addEventListener("click", function () {
                       videoElem.currentTime -= 2;
                   });
-
+                  
                   playButton.addEventListener("click", function () {
                       videoElem.play();
                   });
@@ -353,7 +353,7 @@
                       videoElem.currentTime = 0;
                       videoElem.pause();
                   });
-
+                  
                   forwardButton.addEventListener("click", function () {
                       videoElem.currentTime += 2;
                   });
@@ -369,10 +369,10 @@
             <div class=build>
                <pre>
 &lt;video id="demo" src="foo.mp4">&lt;/video>
-&lt;button onclick="document.getElementById('demo').play()">Play</button>
-&lt;button onclick="document.getElementById('demo').pause()">Pause</button>
-&lt;button onclick="document.getElementById('demo').volume+=0.1">++</button>
-&lt;button onclick="document.getElementById('demo').volume-=0.1">--</button>
+&lt;button onclick="document.getElementById('demo').play()">Play&lt;/button>
+&lt;button onclick="document.getElementById('demo').pause()">Pause&lt;/button>
+&lt;button onclick="document.getElementById('demo').volume+=0.1">++&lt;/button>
+&lt;button onclick="document.getElementById('demo').volume-=0.1">--&lt;/button>
 </pre>
                <pre>
 &lt;script>
@@ -492,27 +492,27 @@ var user = JSON.parse(localStorage.getItem('user'));
             <p id="ta-log"></p>
             <script defer>
                (function(){
-
+               
                  try {
                    (window.localStorage.getItem) // will throw in Firefox under some settings
                  } catch(e){
                    return; // quit because dom.storage.enabled is false
                  }
-
+               
                  var area = document.querySelector('#ta');
                  // place content from previous edit
                  if (!area.value) {
                    area.value = window.localStorage.getItem('value');
                  }
                  updateLog(false);
-
+               
                  // your content will be saved locally
                  document.querySelector('#ta').addEventListener('input', function () {
                    window.localStorage.setItem('value', area.value);
                    window.localStorage.setItem('timestamp', (new Date()).getTime());
                    updateLog(true);
                  }, false);
-
+               
                  function updateLog(new_save) {
                    var log = document.querySelector("#ta-log");
                    var delta = 0;
@@ -528,7 +528,7 @@ var user = JSON.parse(localStorage.getItem('user'));
                      }
                    }
                  }
-
+               
                })();
             </script>
             <pre>document.querySelector('#ta').addEventListener('input', function(e) {
@@ -647,13 +647,13 @@ window.addEventListener('offline', function(e) {
             <h2>Canvas</h2>
          </article>
          <article class=smaller>
-           <h3>Canvas</h3>
-           <p>Canvas gives an easy and powerful way to draw graphics using JavaScript</p>
-           <div class=build>
-           <pre>
+            <h3>Canvas</h3>
+            <p>Canvas gives an easy and powerful way to draw graphics using JavaScript</p>
+            <div class=build>
+            <pre>
            &lt;canvas id="draw-square" width="300" height="300"&gt;&lt;/canvas&gt;
            </pre>
-           <pre>
+            <pre>
            &lt;script>
              function draw () {
                 var canvas = document.getElementById('draw-square');
@@ -678,65 +678,64 @@ window.addEventListener('offline', function(e) {
            </pre>
          </article>
          <article class=smaller>
-           <h3>Canvas - Example</h3>
-           <p>
-           <canvas id="draw-square" width="400" height="400"></canvas>
-           <script>
-             function draw () {
-                var canvas = document.getElementById('draw-square');
-                if (canvas.getContext) {
-                  var context = canvas.getContext('2d');
-
-                    context.fillStyle = 'blue';
-                    context.fillRect (12,12,96,96);
-
-                    context.fillStyle = "#FF1C0A";
-                    context.beginPath();
-                    context.arc(100, 100, 90, 0, Math.PI*2, true);
-                    context.closePath();
-                    context.fill();
-                } else {
-                  alert("Your browser does not support Canvas")
-                }
-              }
-
-            draw();
-          </script>
-           </p>
-           <p>More Examples : <br />
-            <a href="http://corehtml5canvas.com/code-live/" target="_blank">http://corehtml5canvas.com/code-live/</a>
-            <a href="http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html" target="_blank">http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html</a>
-           </p>
+            <h3>Canvas - Example</h3>
+            <p>
+               <canvas id="draw-square" width="400" height="400"></canvas>
+               <script>
+                  function draw () {
+                     var canvas = document.getElementById('draw-square');
+                     if (canvas.getContext) {
+                       var context = canvas.getContext('2d');
+                  
+                         context.fillStyle = 'blue';
+                         context.fillRect (12,12,96,96);
+                  
+                         context.fillStyle = "#FF1C0A";
+                         context.beginPath();
+                         context.arc(100, 100, 90, 0, Math.PI*2, true);
+                         context.closePath();
+                         context.fill();
+                     } else {
+                       alert("Your browser does not support Canvas")
+                     }
+                   }
+                  
+                  draw();
+               </script>
+            </p>
+            <p>More Examples : <br />
+               <a href="http://corehtml5canvas.com/code-live/" target="_blank">http://corehtml5canvas.com/code-live/</a>
+               <a href="http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html" target="_blank">http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html</a>
+            </p>
          </article>
          <article class="fill">
             <h2>Web Worker</h2>
          </article>
          <article>
-         <h3>Web Worker</h3>
-    <p>Any script that you want to execute in the background is a good candidate to run as a web worker</p>
-    <div class=build>
-<pre>
+            <h3>Web Worker</h3>
+            <p>Any script that you want to execute in the background is a good candidate to run as a web worker</p>
+            <div class=build>
+               <pre>
 Usage : <br />
 Intense mathematical/scientific computations <br />
 Big amount of data you want to process retreived from an AJAX request<br />
 Background search in dictionaries to help the user typing
 </pre>
-<pre>
+               <pre>
 Limitations : <br />
 Can't access DOM objects <br />
 Can't access global/local Javascript variables or functions
 </pre>
-    </div>
-
+            </div>
          </article>
          <article class=smaller>
-          <h3>Web Worker - Example</h3>
-          <pre>
+            <h3>Web Worker - Example</h3>
+            <pre>
             &lt;div id="result">&lt;/div>
             &lt;a href="#" onclick="startWorker(); return false;">Start Worker&lt;/a>
             &lt;a href="#" onclick="stopWorker(); return false;">Stop Worker&lt;/a>
           </pre>
-          <pre>
+            <pre>
           &lt;script type="text/javascript">
           var w;
 
@@ -760,11 +759,10 @@ Can't access global/local Javascript variables or functions
           }
           &lt;/script>
           </pre>
-
          </article>
          <article class=smaller>
-          <h3>Web Worker - Example</h3>
-          <pre>
+            <h3>Web Worker - Example</h3>
+            <pre>
           //count.js
             &lt;script>
               var i=0;
@@ -780,46 +778,45 @@ Can't access global/local Javascript variables or functions
               timedCount();
             &lt;/script>
           </pre>
-
-<script type="text/javascript">
-var w;
-function startWorker() {
- if(typeof(Worker)!=="undefined") {
-
-  //instantiate a Worker object
-  w = new Worker("count.js");
-
-  //You’ll then start the worker (and thus a thread under Windows) by sending it a first message:
-  w.postMessage();
-
-  w.onmessage = function(event){
-   document.getElementById("result").innerHTML=event.data;
-  };
-
-  worker.onerror = function (event) {
-         console.log(event.message, event);
-      };
- }
- else {
-  alert("Sorry!! Your browser does not support Web worker");
- }
-}
-function stopWorker(){
- w.terminate();
-}
-</script>
-<p>
-Demo : <br />
-<div id="result"></div>
-<p>
-<a href="#" onclick="startWorker(); return false;">Start Worker</a>
-<a href="#" onclick="stopWorker(); return false;">Stop Worker</a>
-</p>
-          <p>
-          Take a look at - <a href="http://html5demos.com/worker" target="_blank">http://html5demos.com/worker</a>
-          </p>
-          </article>
-          <article>
+            <script type="text/javascript">
+               var w;
+               function startWorker() {
+                if(typeof(Worker)!=="undefined") {
+               
+                 //instantiate a Worker object
+                 w = new Worker("count.js");
+               
+                 //You’ll then start the worker (and thus a thread under Windows) by sending it a first message:
+                 w.postMessage();
+               
+                 w.onmessage = function(event){
+                  document.getElementById("result").innerHTML=event.data;
+                 };
+               
+                 worker.onerror = function (event) {
+                        console.log(event.message, event);
+                     };
+                }
+                else {
+                 alert("Sorry!! Your browser does not support Web worker");
+                }
+               }
+               function stopWorker(){
+                w.terminate();
+               }
+            </script>
+            <p>
+               Demo : <br />
+            <div id="result"></div>
+            <p>
+               <a href="#" onclick="startWorker(); return false;">Start Worker</a>
+               <a href="#" onclick="stopWorker(); return false;">Stop Worker</a>
+            </p>
+            <p>
+               Take a look at - <a href="http://html5demos.com/worker" target="_blank">http://html5demos.com/worker</a>
+            </p>
+         </article>
+         <article>
             <h3>Things I missed :-( </h3>
             <pre>
                   Drag & Drop
@@ -831,13 +828,12 @@ Demo : <br />
                   More Tags like &lt;Figure>, &lt;small> &lt;hgroup>, &lt;output>
                   Data Attribute
             </pre>
-          </article>
+         </article>
          <article class="">
             <h3>
                Thank you!
             </h3>
             <p>Source - <a href="https://github.com/ansumanmishra/HTML5-Overview" target="_blank">https://github.com/ansumanmishra/HTML5-Overview</a></p>
-
             <p>Check out my <a href="http://ansumanhere.blogspot.com" target="_blank">blog</a> for more HTML5 articles.</p>
          </article>
          <div class="slide-area" id="prev-slide-area"></div>
