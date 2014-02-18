@@ -19,6 +19,8 @@
             <p>
                Ansuman Mishra
                <br>
+               Tata Consultancy Services
+               <br><br>
                Feb 19, 2014
             </p>
          </article>
@@ -78,7 +80,7 @@
             </h3>
             <h5>HTML5 Approach</h5>
             <p>
-               Live Demo - <a target="_blank" href="images/html5/index.html">See Example</a>
+               Live Demo - <a target="_blank" href="html5/index.html">See Example</a>
             </p>
             <p>
             <pre class="code">
@@ -173,26 +175,26 @@
          <article class="fill">
             <h2>Form Types</h2>
          </article>
-         <article>
+         <article class=smaller>
             <h3>New Form Types</h3>
             <pre>
         <form>
         &lt;input type="text" required&gt;
-        <input type="text" required>
+        <input type="text" required> <br />
         &lt;input type="email" value="some@email.com&gt;
-        <input type="email" value="some@email.com">
+        <input type="email" value="some@email.com"><br>
         &lt;input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"&gt;
-        <input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14">
+        <input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"><br>
         &lt;input type="range" min="0" max="50" value="10"&gt;
-        <input type="range" min="0" max="50" value="10">
+        <input type="range" min="0" max="50" value="10"><br>
         &lt;input results="10" type="search" placeholder="Search..."&gt;
-        <input results="10" type="search" placeholder="Search...">
+        <input results="10" type="search" placeholder="Search..."><br>
         &lt;input type="tel" placeholder="987654321" pattern="[0-9][A-Z]{3}"&gt;
         <input type="tel" placeholder="987654321" pattern="[0-9][A-Z]{3}">
         &lt;input type="color" placeholder="e.g. #bbbbbb"&gt;
         <input type="color" placeholder="e.g. #bbbbbb">
         &lt;input type="number" step="1" min="-5" max="10" value="0"&gt;
-        <input type="number" step="1" min="-5" max="10" value="0">
+        <input type="number" step="1" min="-5" max="10" value="0"><br>
         <button type="submit">Validate Form</button>
         </form>
         </pre>
@@ -608,7 +610,7 @@ window.addEventListener('offline', function(e) {
 </pre>
          </article>
          <article class="fill">
-            <iframe src="//html5-demos.appspot.com/static/navigator.onLine.html"></iframe>
+            <iframe src="http://html5-demos.appspot.com/static/navigator.onLine.html"></iframe>
          </article>
          <article class="fill">
             <h2>Geolocation</h2>
@@ -728,6 +730,71 @@ window.addEventListener('offline', function(e) {
             <button onclick="stopWatch()">
             Stop
             </button>
+         </article>
+         <article class="fill">
+            <h2>Canvas</h2>
+         </article>
+         <article class=smaller>
+           <h3>Canvas</h3>
+           <p>Canvas gives an easy and powerful way to draw graphics using JavaScript</p>
+           <div class=build>
+           <pre>
+           &lt;canvas id="draw-square" width="300" height="300"&gt;&lt;/canvas&gt;
+           </pre>
+           <pre>
+           &lt;script>
+             function draw () {
+                var canvas = document.getElementById('draw-square');
+                if (canvas.getContext) {
+                  var context = canvas.getContext('2d');
+
+                    context.fillStyle = 'blue';
+                    context.fillRect (12,12,96,96);
+
+                    context.fillStyle = "#FF1C0A";
+                    context.beginPath();
+                    context.arc(100, 100, 90, 0, Math.PI*2, true);
+                    context.closePath();
+                    context.fill();
+                } else {
+                  alert("Your browser does not support Canvas")
+                }
+              }
+
+            draw();
+           &lt;/script>
+           </pre>
+         </article>
+         <article class=smaller>
+           <h3>Canvas - Example</h3>
+           <p>
+           <canvas id="draw-square" width="400" height="400"></canvas>
+           <script>
+             function draw () {
+                var canvas = document.getElementById('draw-square');
+                if (canvas.getContext) {
+                  var context = canvas.getContext('2d');
+
+                    context.fillStyle = 'blue';
+                    context.fillRect (12,12,96,96);
+
+                    context.fillStyle = "#FF1C0A";
+                    context.beginPath();
+                    context.arc(100, 100, 90, 0, Math.PI*2, true);
+                    context.closePath();
+                    context.fill();
+                } else {
+                  alert("Your browser does not support Canvas")
+                }
+              }
+
+            draw();
+          </script>
+           </p>
+           <p>More Examples : <br />
+            <a href="http://corehtml5canvas.com/code-live/" target="_blank">http://corehtml5canvas.com/code-live/</a>
+            <a href="http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html" target="_blank">http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html</a>
+           </p>
          </article>
          <article class="">
             <h3>
