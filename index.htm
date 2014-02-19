@@ -784,7 +784,7 @@ Can't access global/local Javascript variables or functions
                 if(typeof(Worker)!=="undefined") {
                
                  //instantiate a Worker object
-                 w = new Worker("count.js");
+                 w = new Worker("./js/count.js");
                
                  //You’ll then start the worker (and thus a thread under Windows) by sending it a first message:
                  w.postMessage();
